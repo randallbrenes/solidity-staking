@@ -86,8 +86,8 @@ contract StakingContract is Ownable, ReentrancyGuard, Pausable {
         Stake storage stakeData = stakes[user];
 
         // Calculate rewards based on time since last update
-        uint256 elapsedTime = block.number - stakeData.timestamp;
-        uint256 newRewards = (stakeData.amount * rewardRate * elapsedTime/1000); // unrealistic approach to reward per second 1 token
+        uint256 elapsedTime = block.timestamp - stakeData.timestamp;
+        uint256 newRewards = (stakeData.amount * rewardRate * elapsedTime) / 100000000000; // unrealistic approach to reward per second 1 token
         
         // Update rewards and timestamp
         stakeData.rewardsEarned += newRewards;
@@ -100,10 +100,10 @@ contract StakingContract is Ownable, ReentrancyGuard, Pausable {
     }
     
     function pause() public onlyOwner { // safeguard function to pause contract in case of worries
-    _pause();
+        _pause();
     }
     
     function unpause() public onlyOwner { // safeguard function to unpause contract
-    _unpause();
+        _unpause();
     }
 }

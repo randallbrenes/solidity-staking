@@ -7,7 +7,7 @@
 
 1. Randall Brenes
 2. Wilmer Ramírez
-3. ¿Jose...?
+3. Jose Cerdas
 
 # 1. Detalles de asignación
 
@@ -43,8 +43,8 @@ Cada equipo debe elegir un contrato y discutir cómo desarrollarlo. El objetivo 
 
 1. Se escogió implementar un contrato de **`Staking`** de **`ERC20`**, por las recomendaciones y sugerencias se usó librería **`IERC20`**, _token inmutable_
 2. Se requirió implementar un _token_ personalizado para poder probar el contrato de _Staking_ en modo virtualizado o simulado dado que se pide verificación de uso de un _token_ con conformidad de **`ERC20`** o **`IERC20`**.
-
-3. Se probaron con éxitos las implementaciones virtualizadas o simuladas del contrato de _Staking_ y el contrato del _Token_ en Remix VM (Cancun).
+3. Se probaron con éxito las implementaciones virtualizadas o simuladas del contrato de _Staking_ y el contrato del _Token_ en Remix VM (Cancun).
+4. Se recomienda inicializar el contrato con un rewardsEarned=1 para asegurar que los rewards incremental de una manera más realista. 
 
 ## 2.2. Explicación de contrato
 
